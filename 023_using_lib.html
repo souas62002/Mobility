@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		#box{
+			width: 450px;
+			height: 200px;
+			background-color: silver;
+			border: 1px solid gray;
+			margin: auto;
+			overflow:auto;
+		}
+		button{
+			width: 450px;
+			margin: 10px auto;
+			display: block;
+		}
+	</style>
+	<script src="lib/AjaxFactory.js"></script>
+	<script>
+		var xhr = null;
+		window.onload = function(){
+			document
+			.getElementById("btnClick")
+			.onclick = clickFun;
+		}
+		function clickFun(){
+			xhr = AjaxFactory.create();
+			xhr.open("get","data/heros.xml", true);
+			xhr.onreadystatechange = readyStateHandler;
+			xhr.send();
+		}
+		function readyStateHandler(){
+			if(xhr.status == 200 && xhr.readyState == 4){
+			
+			// document.getElementById("box").innerHTML += xhr.responseText;
+			// document.getElementById("box").innerHTML += xhr.responseXML.getElementsByTagName("hTitle")[0].firstChild.nodeValue;
+			var count = xhr.responseXML.getElementsByTagName("hero").length;
+			for (var i = 0; i < count; i++){
+				document.getElementById("box").innerHTML += xhr.responseXML.getElementsByTagName("hTitle")[i].firstChild.nodeValue+"<hr/>";
+			}
+			}
+		}
+	</script>
+</head>
+<body>
+	<button id="btnClick">Click Me</button>
+	<div id="box"></div>
+</body>
+</html>
+<!--
+AjaxFactory = {
+	create : function(){
+		if(window.XMLHttpRequest){
+			xhr = new XMLHttpRequest();
+		}else{
+			xhr = new ActiveXObject("Microsoft.XmlHttp");
+		}
+		return xhr;
+	}
+}
+-->

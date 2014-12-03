@@ -1,0 +1,15 @@
+<userInfo>
+	<firstName>Vijay</firstName>
+	<lastName>Shivakumar</lastName>
+	<city>Kolkata</city>
+	<company>Accenture</company>
+	<branch1>
+		Bangalore
+	</branch1>
+	<branch2>
+		Kolkata
+	</branch2>
+	<branch3>
+		Pune
+	</branch3>
+</userInfo>
