@@ -47,6 +47,14 @@
 			height: 100px;
 		}
 	</style>
+	<script type="text/accenture" id="temp" >
+		<div class='hero'>
+			<h1>{{hn}}</h1>
+			<h3>Contact : <span>{{hp}}</span></h3>
+			<img src='{{hi}}'/>
+			<textarea>{{hd}}</textarea>
+		</div>
+	</script>
 	<script src="lib/AjaxFactory.js"></script>
 	<script>
 		var xhr = null;
@@ -72,7 +80,9 @@
 					var hp = data.hero[i].phone;
 					var hi = data.hero[i].photo;
 					var hd = data.hero[i].hDetails;
-					document.getElementById("box").innerHTML += "<div class='hero'><h1>"+hn+"</h1><h3>Contact : <span>"+hp+"</span></h3><img src='"+hi+"'/><textarea>"+hd+"</textarea></div>"; 
+					var elm = document.getElementById("temp").innerHTML;
+					document.getElementById("box").innerHTML += elm.replace("{{hn}}",hn).replace("{{hp}}",hp).replace("{{hi}}",hi).replace("{{hd}}",hd); 
+					// document.getElementById("box").innerHTML += "<div class='hero'><h1>"+hn+"</h1><h3>Contact : <span>"+hp+"</span></h3><img src='"+hi+"'/><textarea>"+hd+"</textarea></div>"; 
 				}
 			}
 		}
