@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		canvas{
+			border: 1px solid red;
+			margin: auto;
+			display: block;
+		}
+	</style>
+	<script>
+		var ctx = null;
+		var d = {
+			d1 : [10,400,50,100],
+			d2 : [70,50,50,450],
+			d3 : [130,300,50,200],
+			d4 : [190,250,50,250],
+			d5 : [250,400,50,100],
+			d6 : [310,125,50,375],
+			d7 : [370,150,50,350],
+			d8 : [430,240,50,260]
+		};
+		window.onload = function(){
+			ctx = document.querySelector("canvas").getContext("2d");
+			ctx.canvas.width = 500;
+			ctx.canvas.height = 500;
+			ctx.strokeStyle = "silver";
+			ctx.beginPath();
+			for(var i = 0; i < 500; i+=10){
+				ctx.moveTo(0,i);
+				ctx.lineTo(500,i);
+				ctx.moveTo(i,0);
+				ctx.lineTo(i,500);
+			}
+			ctx.closePath();
+			ctx.stroke()
+			
+			drawBarChart();
+			drawLineChart();
+			
+			//=====================================================
+			// Second Chart
+			
+		};
+		
+	function drawBarChart(){
+		ctx.font = "normal 20px arial";
+			ctx.fillStyle = "#b1d9db";
+			ctx.fillRect(d.d1[0],d.d1[1],d.d1[2],d.d1[3]);
+			ctx.fillStyle = "black";
+			ctx.fillText((d.d1[3]/500)*100+"%",d.d1[0],d.d1[1]);
+			
+			ctx.fillStyle = "#b4d875";
+			ctx.fillRect(d.d2[0],d.d2[1],d.d2[2],d.d2[3]);
+			ctx.fillStyle = "black";
+			ctx.fillText((d.d2[3]/500)*100+"%",d.d2[0],d.d2[1]);
+			
+			ctx.fillStyle = "#81a9db";
+			ctx.fillRect(d.d3[0],d.d3[1],d.d3[2],d.d3[3]);
+			ctx.fillStyle = "black";
+			ctx.fillText((d.d3[3]/500)*100+"%",d.d3[0],d.d3[1]);
+			
+			ctx.fillStyle = "#ccbe8a";
+			ctx.fillRect(d.d4[0],d.d4[1],d.d4[2],d.d4[3]);
+			ctx.fillStyle = "black";
+			ctx.fillText((d.d4[3]/500)*100+"%",d.d4[0],d.d4[1]);
+			
+			ctx.fillStyle = "#a8a7a6";
+			ctx.fillRect(d.d5[0],d.d5[1],d.d5[2],d.d5[3]);
+			ctx.fillStyle = "black";
+			ctx.fillText((d.d5[3]/500)*100+"%",d.d5[0],d.d5[1]);
+			
+			ctx.fillStyle = "#efa7de";
+			ctx.fillRect(d.d6[0],d.d6[1],d.d6[2],d.d6[3]);
+			ctx.fillStyle = "black";
+			ctx.fillText((d.d6[3]/500)*100+"%",d.d6[0],d.d6[1]);
+			
+			ctx.fillStyle = "#7c9b84";
+			ctx.fillRect(d.d7[0],d.d7[1],d.d7[2],d.d7[3]);
+			ctx.fillStyle = "black";
+			ctx.fillText((d.d7[3]/500)*100+"%",d.d7[0],d.d7[1]);
+			
+			ctx.fillStyle = "#908bb7";
+			ctx.fillRect(d.d8[0],d.d8[1],d.d8[2],d.d8[3]);
+			ctx.fillStyle = "black";
+			ctx.fillText((d.d8[3]/500)*100+"%",d.d8[0],d.d8[1]);
+	}
+	function drawLineChart(){
+		ctx.beginPath();
+			ctx.strokeStyle = "black";
+			ctx.moveTo(0,500);
+			ctx.lineTo(d.d1[0]+25,d.d1[1]);
+			ctx.lineTo(d.d2[0]+25,d.d2[1]);
+			ctx.lineTo(d.d3[0]+25,d.d3[1]);
+			ctx.lineTo(d.d4[0]+25,d.d4[1]);
+			ctx.lineTo(d.d5[0]+25,d.d5[1]);
+			ctx.lineTo(d.d6[0]+25,d.d6[1]);
+			ctx.lineTo(d.d7[0]+25,d.d7[1]);
+			ctx.lineTo(d.d8[0]+25,d.d8[1]);
+			ctx.stroke();
+	}
+	</script>
+</head>
+<body>
+	<canvas></canvas>
+</body>
+</html>

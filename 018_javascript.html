@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+
+	<script>
+	/*
+		window.onload = function(){
+			console.log("window loaded")// second 
+		}
+		function bodyLoad(){
+			console.log("body loaded")// third
+		}
+	 */
+		document.addEventListener("DOMContentLoaded", loadFun);
+		
+		function loadFun(){
+			// console.log("DOM loaded")// first
+			// alert(document.getElementById("list").innerHTML);
+			// alert(document.getElementsByTagName("ul")[0].innerHTML);
+			// alert(document.querySelector("ul").innerHTML);
+			// alert(document.querySelectorAll("ul")[0].innerHTML);
+			// alert(document.getElementsByTagName("body")[0].childNodes[1].innerHTML);
+			// alert(document.getElementsByTagName("body")[0].children[0].innerHTML);
+			// alert(document.getElementsByTagName("html")[0].children[2].children[0].innerHTML);
+			// alert(document.getElementsByName("accenture")[0].innerHTML);
+			// alert(document.querySelector("#list").innerHTML);
+			// alert(document.querySelector(".box").innerHTML);
+			// alert(document.querySelector("ul[title]").innerHTML);
+		}
+	</script>
+	
+</head>
+<body>
+	<ul name="accenture" title="hello there" id="list" class="box">
+		<li class="item">List Item</li>
+		<li class="item">List Item</li>
+		<li class="item">List Item</li>
+		<li class="item">List Item</li>
+		<li class="item">List Item</li>
+	</ul>
+	<p id="para">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sed molestias iure ipsum reiciendis rem fugiat reprehenderit sunt esse officiis repellat tempore magnam corrupti voluptas porro totam inventore libero optio.
+	</p>
+	<p class="paragraph">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sed molestias iure ipsum reiciendis rem fugiat reprehenderit sunt esse officiis repellat tempore magnam corrupti voluptas porro totam inventore libero optio.
+	</p>
+	<p class="paragraph">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sed molestias iure ipsum reiciendis rem fugiat reprehenderit sunt esse officiis repellat tempore magnam corrupti voluptas porro totam inventore libero optio.
+	</p>
+</body>
+</html>

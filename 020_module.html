@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+	/*
+		(function(){
+			alert(arguments[0]+" from "+arguments[1]+" job "+arguments[2]);
+		}("vijay","bangalore","is trainer"));
+	 */
+	var vj = "kolkata";
+	var user = (function(){
+		var firstName = "vijay";
+		var lastName = "Shivakumar";
+		return {
+			companyName : "Accenture",
+			fullName : firstName+" "+lastName
+		}
+	}());
+	console.log(user.fullName);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

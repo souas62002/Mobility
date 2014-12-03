@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+	window.onload = function(){
+		document.getElementById("storeBtn").addEventListener("click",storeHandler);
+		document.getElementById("getBtn").addEventListener("click",retriveHandler);
+		document.getElementById("getKeyName").addEventListener("click",getKeyNameFun);
+		document.getElementById("allClear").addEventListener("click",clearAllData);
+		document.getElementById("removeIt").addEventListener("click",removeHandler);
+	}
+	function storeHandler(){
+		window.localStorage.setItem("user name", document.getElementById("userName").value);
+		document.getElementById("userName").value = "";
+	}
+	function retriveHandler(){
+		document.getElementById("un").innerHTML = window.localStorage.getItem("user name");
+	};
+	function getKeyNameFun(){
+		alert(window.localStorage.key(0));
+	};
+	function clearAllData(){
+		window.localStorage.clear();
+		alert("call cleared");
+	};
+	function removeHandler(){
+		var userName = document.getElementById("userName").value;
+		window.localStorage.removeItem(userName);
+		alert("removed");
+	};
+	/*
+	 * 5 MB
+	 * 2.5 MB
+	 */
+	</script>
+</head>
+<body>
+	<fieldset>
+		<legend>
+			<h2>Storage API</h2>
+		</legend>
+		<input id="userName" type="text" />
+		<h3> User Name is :  <span id="un"></span></h3>
+	</fieldset>
+
+	<button id="storeBtn">Store User Name</button>
+	<button id="getBtn">Get User Name</button>
+	<button id="getKeyName">Get Key Name</button>
+	<button id="allClear">Clear All</button>
+	<button id="removeIt">Remove It</button>
+</body>
+</html>

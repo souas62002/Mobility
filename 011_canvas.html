@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		canvas{
+			border: 1px solid red;
+		}
+	</style>
+	<script>
+		var can = null;
+		window.onload = function(){
+			can = document.querySelector("canvas");
+			var ctx = can.getContext("2d");
+			
+			//======================
+			// ctx.transform
+			// ctx.translate
+			// ctx.rotate
+			// ctx.scale
+			
+			// ctx.translate(50,50);
+			// ctx.rotate((Math.PI / 180) * 45)
+			// ctx.scale(0.5,2);
+			//======================
+			
+			ctx.font = "bold 24px Verdana";
+			ctx.fillText("Accenture",10,40,200);
+			
+			ctx.fillStyle = "grey";
+			ctx.font = "bold 44px Verdana";
+			ctx.fillText(">",152,52,200);
+			
+			ctx.fillStyle = "red";
+			ctx.font = "bold 44px Verdana";
+			ctx.fillText(">",150,50,200);
+			
+			ctx.fillStyle = "gray";
+			ctx.font = "bold 14px Verdana";
+			ctx.fillText("kolkata",10,55,200);
+		};
+	</script>
+</head>
+<body>
+	<canvas></canvas>
+	<!-- <script>
+		// document.getElementsByTagName("canvas");
+		// console.log(document.getElementsByTagName("body")[0].children[0].tagName)
+		
+		// ECMA 5
+		// console.log(document.querySelector("canvas").tagName);
+		// console.log(document.querySelector("#box1").tagName);
+		// console.log(document.querySelectorAll("canvas")[1].id);
+	</script> -->
+</body>
+</html>

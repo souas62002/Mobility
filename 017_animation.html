@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		canvas{
+			border: 1px solid red;
+			margin: auto;
+			display: block;
+		}
+	</style>
+	<script>
+		// var ctx = null;
+		// var boxX = -50;
+		// window.onload = function(){
+			// ctx = document.querySelector("canvas").getContext("2d");
+			// ctx.canvas.width = 500;
+			// ctx.canvas.height = 500;
+			// setInterval(anim,1);
+		// };
+		// function anim(){
+			// boxX++;
+			// ctx.clearRect(0,0,500,500);
+			// ctx.fillRect(boxX,250,50,50);
+			// if(boxX > 500){
+				// boxX = -50;
+			// }
+		// }
+		var ctx = null;
+
+		window.onload = function(){
+			ctx = document.querySelector("canvas").getContext("2d");
+			ctx.canvas.width = 500;
+			ctx.canvas.height = 500;
+			setInterval(anim,1);
+		};
+		function anim(){
+			var r = Math.round(Math.random()*255);
+			var g = Math.round(Math.random()*255);
+			var b = Math.round(Math.random()*255);
+			var a = Math.random();
+			ctx.fillStyle = "rgba("+r+","+g+","+b+","+a+")";
+			
+			var boxX = Math.round(Math.random()*500);
+			var boxY = Math.round(Math.random()*500);
+			var boxD = Math.round(Math.random()*100);
+			// ctx.clearRect(0,0,500,500);
+			ctx.fillRect(boxX,boxY,boxD,boxD);
+		}
+	</script>
+</head>
+<body>
+	<canvas></canvas>
+</body>
+</html>

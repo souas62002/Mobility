@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+	var un = null;
+	window.onload = function(){
+		document.getElementById("storeBtn").addEventListener("click",storeHandler);
+		document.getElementById("getBtn").addEventListener("click",retriveHandler);
+	}
+	function storeHandler(){
+		un = document.getElementById("userName").value;
+		document.getElementById("userName").value = "";
+	}
+	function retriveHandler(){
+		document.getElementById("un").innerHTML = window.un;
+	};
+	/*
+	 * 5 MB
+	 * 2.5 MB
+	 */
+	</script>
+</head>
+<body>
+	<fieldset>
+		<legend>
+			<h2>Storage API</h2>
+		</legend>
+		<input id="userName" type="text" />
+		<h3> User Name is :  <span id="un"></span></h3>
+	</fieldset>
+
+	<button id="storeBtn">Store User Name</button>
+	<button id="getBtn">Get User Name</button>
+</body>
+</html>

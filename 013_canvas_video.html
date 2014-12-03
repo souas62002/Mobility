@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		canvas{
+			border: 1px solid red;
+		}
+	</style>
+	<script>
+		var can,ctx,vid = null;
+		
+		window.onload = function(){
+			can = document.querySelector("canvas");
+			ctx = can.getContext("2d");
+			vid = document.getElementById("vid");
+			setInterval(drawIt,10);
+		}
+		function drawIt(){
+			ctx.drawImage(vid,0,0,160,120);
+		}
+	</script>
+</head>
+<body>
+	<canvas></canvas>
+	<hr/>
+	<video autoplay id="vid" style="display: none" >
+		<source src="video/html5.mp4"></source>
+		<source src="video/html5.webm"></source>
+	</video>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+	var config = {
+		enableHignAccuracy : true,
+		maximumAge : 10000,
+		timeStamp : 6000
+	};
+	var pos = null;
+	var wp = null;
+	
+	window.onload = function(){
+		if( navigator.geolocation ){
+		//	alert("geolocation supported")'
+	//	navigator.geolocation.getCurrentPosition(successFun,errorFun,config)
+	//	navigator.geolocation.watchPosition(successFun,errorFun,config)
+	wp = navigator.geolocation.watchPosition(successFun,errorFun,config)
+		}else{
+			alert("geolocation not supported");
+		};
+		
+		document.getElementById("stopBtn").addEventListener("click",clickHandler);
+	};
+	function successFun(position){
+		if(pos === null){
+			pos = position;
+		};
+		var ts = pos.timestamp;
+		var lon = pos.coords.longitude;
+		var lat = pos.coords.latitude;
+		var acc = pos.coords.accuracy;
+		var zoom = document.getElementById("zoom").value;
+		document.getElementById("ts").innerHTML = ts;
+		document.getElementById("lon").innerHTML = lon;
+		document.getElementById("lat").innerHTML = lat;
+		document.getElementById("acc").innerHTML = acc;
+		document.getElementById("box").innerHTML = "<img src='http://maps.googleapis.com/maps/api/staticmap?center="+lat+","+lon+"&zoom="+zoom+"&size=500x500&markers=size:mid|color:orange|label:V|"+lat+","+lon+"'/>";
+	
+	};
+	function errorFun(error){
+		 alert(error.code)
+		// alert(error.message)
+	};
+	function renderMap(){
+		successFun(pos)
+	}
+	function clickHandler(){
+		navigator.geolocation.clearWatch(wp);
+	}
+	</script>
+</head>
+<body>
+	<fieldset>
+		<legend>
+			<h2>Navigation API | <span  id="display"></span></h2>
+		</legend>
+		<h3> Requested at :  <span id="ts"></span></h3>
+		<h3> Longitude : <span id="lon"></span></h3>
+		<h3> Latitude : <span id="lat"></span></h3>
+		<h3> Accuracy : <span id="acc"></span> meters</h3>
+		<input id="zoom" onchange="renderMap()" type="range" min="10" max="20" step="1" value="10" />
+	</fieldset>
+	<!-- img src="http://maps.googleapis.com/maps/api/staticmap?center=kolkata,westbengal&zoom=16&size=500x3500&markers=color:orange%7Clabel:V" --/>
+	<!--
+https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=16&size=500x3500&markers=color:orange%7Clabel:V
+	-->
+	<div id="box"></div>
+	<button id="stopBtn">Stop</button>
+</body>
+</html>

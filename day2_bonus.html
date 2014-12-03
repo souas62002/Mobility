@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Storage API Fun WEB | LOCAL | SESSION : STORAGE </title>
+        <style>
+        	label{
+        		width: 100px;
+        		display: inline-block;
+        	}
+        </style>
+<script>
+	window.onload = function(){
+		document.getElementById("setBtn").onclick = setUserData;
+		document.getElementById("getBtn").onclick = getUserDob;
+	}
+	function setUserData(){
+		var val = {
+			"fName":document.getElementById("fn").value,
+			"lName":document.getElementById("ln").value,
+			"uAdd":document.getElementById("uAdd").value,
+			"uMail":document.getElementById("uMail").value,
+			"uDob":document.getElementById("uDob").value
+		}
+		
+		console.log(val);
+		var jsonVal = JSON.stringify(val);
+		console.log(jsonVal);
+		
+		localStorage.setItem("user", jsonVal);
+		document.getElementById("fn").value = "";
+		document.getElementById("ln").value = "";
+		document.getElementById("uAdd").value = "";
+		document.getElementById("uMail").value = "";
+		document.getElementById("uDob").value = "";
+		
+	}
+	function getUserDob(){
+		// var val = JSON.parse(localStorage.getItem("user"))
+		// alert(val.uDob*2);
+	}
+// store.js
+</script>
+    </head>
+    
+    <body>
+	<label>First Name :</label> 	<input type="text" id="fn" /> <br />
+	<label>Last Name :</label>  	<input type="text" id="ln" /> <br />
+	<label>Address : </label> 		<textarea id="uAdd"></textarea> <br />
+	<label>eMail :</label>  		<input type="text" id="uMail" /> <br />
+	<label>DOB :</label>  			<input type="text" id="uDob" /> enter a number <br />
+	
+	<label> </label> 				<button id="setBtn">Set User Data</button>
+    <hr/>
+	<button id="getBtn">user DOB</button>
+
+    <section id="display"></section>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+

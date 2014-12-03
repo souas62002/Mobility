@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		#box{
+			width: 450px;
+			height: 200px;
+			background-color: silver;
+			border: 1px solid gray;
+			margin: auto;
+			overflow:auto;
+		}
+		button{
+			width: 450px;
+			margin: 10px auto;
+			display: block;
+		}
+	</style>
+	<script>
+		var xhr = new XMLHttpRequest();
+	//	var xhr = new ActiveXObject("Microsoft.XmlHttp");
+		xhr.onreadystatechange = readyStateChangeHandler;
+		
+		window.onload = function(){
+			/*
+			document
+			.getElementById("btnClick")
+			.addEventListener("click",clickFun)
+			 */
+			document
+			.getElementById("btnClick").onclick = clickFun;
+		}
+		function clickFun(){
+			
+			/* properties
+				reponseText
+				responseXML
+				status
+				statusText
+				readyState
+					0 when initialied
+					1 when configured
+					2 when send request is made 
+					3 when recieving
+					4 when done
+			*/
+			
+			/* methods
+				open() // method, url, sync (false) or async (true), data for server
+				send() // data for server
+			*/
+			
+			/* events
+				onreadystatechange()
+			*/
+			
+			xhr.open("get","data/data.xml", true);
+			xhr.send();
+		}
+		function readyStateChangeHandler(){
+			// 	console.log("XHR Status is "+xhr.readyState)
+			if(xhr.status == 200 && xhr.readyState == 4){
+				document.getElementById("box").innerHTML += xhr.readyState+"<br/>";
+				document.getElementById("box").innerHTML += xhr.responseXML.getElementsByTagName("firstName")[0].firstChild.nodeValue;
+			}
+		}
+	</script>
+</head>
+<body>
+	<!--
+		hungarian Notation
+	-->
+	<button id="btnClick">Click Me</button>
+	<div id="box"></div>
+</body>
+</html>

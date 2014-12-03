@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		canvas{
+			border: 1px solid red;
+		}
+	</style>
+	<script>
+		var can = null;
+		window.onload = function(){
+			can = document.querySelector("canvas");
+			var ctx = can.getContext("2d");
+			// drawImage(image object, x,y);
+			// ctx.drawImage(document.getElementById("photo"), 0,0);
+			var img = new Image();
+			img.src = "images/spiderman.jpg";
+			
+			img.onload = function(){
+				// ctx.translate(50,50);
+				// ctx.rotate((Math.PI / 180) * 45)
+				// ctx.scale(0.5,2);
+				ctx.drawImage(img,0,0,100,100);
+			};
+			
+		};
+	</script>
+</head>
+<body>
+	<canvas></canvas>
+	<hr/>
+	<img src="images/rajani.jpg" id="photo" />
+</body>
+</html>

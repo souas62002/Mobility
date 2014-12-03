@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+		var Box = (function(){
+			this.width = 5;
+			return this;
+		}());
+		//----------------------
+		var bigBox = (function(){
+			this.getWidth = function(){
+				return this.width;
+			};
+			return this;
+		}).apply(Box);
+		//----------------------
+		console.log(bigBox.getWidth());
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
