@@ -57,19 +57,21 @@
 		}
 		function clickFun(){
 			xhr = AjaxFactory.create();
-			xhr.open("get","data/heros.xml", true);
+			xhr.open("get","data/heros.json", true);
 			xhr.onreadystatechange = readyStateHandler;
 			xhr.send();
 		}
 		function readyStateHandler(){
 			if(xhr.status == 200 && xhr.readyState == 4){
-			var count = xhr.responseXML.getElementsByTagName("hero").length;
+			var data = JSON.parse(xhr.responseText);
+			var count = data.hero.length;
+			
 				for (var i = 0; i < count; i++){
 					// document.getElementById("box").innerHTML += xhr.responseXML.getElementsByTagName("hTitle")[i].firstChild.nodeValue+"<hr/>";
-					var hn = xhr.responseXML.getElementsByTagName("hTitle")[i].firstChild.nodeValue;
-					var hp = xhr.responseXML.getElementsByTagName("phone")[i].firstChild.nodeValue;
-					var hi = xhr.responseXML.getElementsByTagName("photo")[i].firstChild.nodeValue;
-					var hd = xhr.responseXML.getElementsByTagName("hDetails")[i].firstChild.nodeValue;
+					var hn = data.hero[i].hTitle;
+					var hp = data.hero[i].phone;
+					var hi = data.hero[i].photo;
+					var hd = data.hero[i].hDetails;
 					document.getElementById("box").innerHTML += "<div class='hero'><h1>"+hn+"</h1><h3>Contact : <span>"+hp+"</span></h3><img src='"+hi+"'/><textarea>"+hd+"</textarea></div>"; 
 				}
 			}
