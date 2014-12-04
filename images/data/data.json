@@ -1,0 +1,12 @@
+{
+"fName":"Vijay",
+"lName":"Shivakumar",
+"city":"Bangalore",
+"is Trainer":true,
+"startDate":24,
+"movies":{
+			"movie1":"Timepass",
+			"movie2":"Yaariyan",
+			"movie3":"Sholay 3D"
+		}
+}

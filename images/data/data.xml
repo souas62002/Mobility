@@ -1,0 +1,12 @@
+<userDetails>
+	<fName>Vijay</fName>
+	<lName>Shivakumar</lName>
+	<city>Bangalore</city>
+	<isTrainer>true</isTrainer>
+	<startDate>24</startDate>
+	<movies>
+		<movie1>Time Pass</movie1>
+		<movie2>Yaariyan</movie2>
+		<movie3>Sholay 3D</movie3>
+	</movies>
+</userDetails>
