@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script>
+		$(function(){
+			$('.carousel').carousel({
+			  interval:2000
+			})
+		})
+	</script>
+	
+</head>
+<body>
+	<div class="container">
+		<!--
+			create a container to center the carousel
+			create a block element to have a unique id for the carousel
+			create a carousel inner which can hold the contents of carousel
+			carousel-inner will now hold the images in them as 
+			each image will have to be in a block element with class item
+			if you want a default item then set it to be active
+		-->
+		<!-- step 1
+		<div id="myCarousel" class="carousel">
+			<section class="carousel-inner">
+				<div class="item">
+					<img src="images/1.jpg" />
+				</div>
+				<div class="item">
+					<img src="images/2.jpg" />
+				</div>
+				<div class="item active">
+					<img src="images/3.jpg" />
+				</div>
+				<div class="item">
+					<img src="images/4.jpg" />
+				</div>
+				<div class="item">
+					<img src="images/5.jpg" />
+				</div>
+			</section>
+		</div>
+		-->
+		
+		<!-- step 2 lets now add controllers 
+			
+		<div id="myCarousel" class="carousel slide">
+			<section class="carousel-inner">
+				<div class="item active">
+					<img src="images/1.jpg" />
+				</div>
+				<div class="item">
+					<img src="images/2.jpg" />
+				</div>
+				<div class="item">
+					<img src="images/3.jpg" />
+				</div>
+				<div class="item">
+					<img src="images/4.jpg" />
+				</div>
+				<div class="item">
+					<img src="images/5.jpg" />
+				</div>
+			</section>
+			
+			<a href="#myCarousel" class="carousel-control left" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a href="#myCarousel" class="carousel-control right" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+			
+		</div>
+		-->
+		
+		<!-- step 3 lets now add indicators
+		-->
+			
+		<div id="myCarousel" class="carousel slide">
+			
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+				<li data-target="#myCarousel" data-slide-to="3"></li>
+				<li data-target="#myCarousel" data-slide-to="4"></li>
+			</ol>
+			
+			<section class="carousel-inner">
+				<div class="item active">
+					<img src="images/1.jpg" />
+				</div>
+				<div class="item">
+					<img src="images/2.jpg" />
+				</div>
+				<div class="item">
+					<img src="images/3.jpg" />
+				</div>
+				<div class="item">
+					<img src="images/4.jpg" />
+				</div>
+				<div class="item">
+					<img src="images/5.jpg" />
+				</div>
+			</section>
+			
+			<!--a href="#myCarousel" class="carousel-control left" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a href="#myCarousel" class="carousel-control right" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a-->
+			
+		</div>
+		
+	</div>
+</body>
+</html>
