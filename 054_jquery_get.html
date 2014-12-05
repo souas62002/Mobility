@@ -7,15 +7,62 @@
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script>
+		var val = 0; 
 		$(function(){
 			// alert($("p").get(0).innerHTML = "good morning");
 			// alert($("p")[0].innerHTML = "good morning");
+			// alert($("p").get(0).innerHTML = "good morning");
+			// $("body").find(".a").css("border","2px solid red")
+			
+			// $("body").find(".a").css("border","2px solid red")
+			// $("p").filter(":first").css("border","2px solid red")
+			
+			// $("body").children().css("border","2px solid red")
+			// $("body > *").css("border","2px solid red");
+
+			/*
+			$("p").each(function(){
+				this.innerHTML = "change me"+val;
+				val++;
+			})
+			var elm = $("p");
+			for(var i = 0; i < elm.length; i++){
+				elm[i].innerHTML = "Changed "+ i;
+			}
+			 */
+			// $("ul").next().css("border","2px solid red");
+			// $("ul+p").css("border","2px solid red");
+			// $("ul+*").css("border","2px solid red");
+			
+			// $("ul").nextAll().css("border","2px solid red");
+			// $("ul~*").css("border","2px solid red");
+
+			/*
+			$("ul")
+			.children()
+			.first()
+			.next()
+			.css("border","2px solid red")
+			.end()
+			.end()
+			.end()
+			.css("border","2px solid green")
+			 */
 		});
 	</script>
 </head>
 <body>
 		<p>Paragraph</p>
+		<ul>
+			<li>List Item 1</li>
+			<li>List Item 2</li>
+			<li>List Item 3</li>
+			<li>List Item 4</li>
+			<li>List Item 5</li>
+		</ul>
+		<pre>Hello i am pre tag</pre>
 		<p>Paragraph</p>
+		<p class="a">Paragraph</p>
 		<p>Paragraph</p>
 		<p>Paragraph</p>
 		<p>Paragraph</p>

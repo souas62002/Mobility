@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		.a{
+			border: 2px solid red;
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+		}
+	</style>
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script>
+		$(function(){
+			// $("pre").css("border","2px solid red");
+			// $("pre").html("<img src='images/rajani.jpg'/>");
+			// $("pre").text("<img src='images/rajani.jpg'/>");
+			// $("input").val("hello guys");
+			//("input").val("hello guys");
+			// alert($("p:eq(2)").hasClass('a'));
+			// $("p:eq(2)").addClass('a').text("hello i got a new class a");
+			// $("p:eq(2)").removeClass('a');
+			
+			$("p:eq(2)").toggleClass('a');
+			$("p:eq(2)").toggleClass('a');
+			$("p:eq(2)").toggleClass('a');
+			$("p:eq(2)").toggleClass('a');
+		});
+	</script>
+</head>
+<body>
+		<p>Paragraph</p>
+		<ul>
+			<li>List Item 1</li>
+			<li>List Item 2</li>
+			<li>List Item 3</li>
+			<li>List Item 4</li>
+			<li>List Item 5</li>
+		</ul>
+		<pre>Hello i am pre tag</pre>
+		<p>Paragraph</p>
+		<p class="a">Paragraph</p>
+		<p>Paragraph</p>
+		<p>Paragraph</p>
+		<p>Paragraph</p>
+		<input type="text" /> 
+</body>
+</html>
