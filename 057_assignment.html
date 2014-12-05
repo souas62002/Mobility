@@ -23,13 +23,54 @@
 		text-decoration: none;
 		font-family: Arial;
 	}
+	a img{
+		margin-left: 20px;
+	}
 </style>
 	<link href="css/bootstrap.css" rel="stylesheet" />
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script>
 		$(function(){
-			
+			/*
+			$("a[href $= '001.jpg']").append("<img src='images/001.jpg' width='40' align='abs-middle'/>")
+			$("a[href $= '002.jpg']").append("<img src='images/002.jpg' width='40' align='abs-middle'/>")
+			$("a[href $= '003.jpg']").append("<img src='images/003.jpg' width='40' align='abs-middle'/>")
+			$("a[href $= '004.jpg']").append("<img src='images/004.jpg' width='40' align='abs-middle'/>")
+			$("a[href $= '005.jpg']").append("<img src='images/005.jpg' width='40' align='abs-middle'/>")
+			 */
+
+			/*
+			$("a").each(function(){
+				var elm = $(this);
+				var path = elm.attr("href");
+				elm.append("<img src='"+path+"' width='40' align='abs-middle'/>");
+				
+			})
+			 */
+
+			/*
+			var elm = $("a");
+			for(var i = 0; i < elm.length; i++){
+				var val = elm[i].getAttribute("href");
+				elm[i].innerHTML += "<img src='"+val+"' width='40' align='abs-middle'/>";
+			}
+			 */
+			$("ul")
+			.find("a[href $= '001.jpg']")
+			.append("<img src='images/001.jpg' width='40' align='abs-middle'/>")
+			.end()
+			.find("a[href $= '002.jpg']")
+			.append("<img src='images/002.jpg' width='40' align='abs-middle'/>")
+			.end()
+			.find("a[href $= '003.jpg']")
+			.append("<img src='images/003.jpg' width='40' align='abs-middle'/>")
+			.end()
+			.find("a[href $= '004.jpg']")
+			.append("<img src='images/004.jpg' width='40' align='abs-middle'/>")
+			.end()
+			.find("a[href $= '005.jpg']")
+			.append("<img src='images/005.jpg' width='40' align='abs-middle'/>");
 		})
 	</script>
 </head>
@@ -46,5 +87,6 @@
 		<li><a href="images/003.jpg">Download Link</a></li>
 		<li><a href="images/002.jpg">Download Link</a></li>
 	</ul>
+
 </body>
 </html>

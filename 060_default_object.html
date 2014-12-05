@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="js/angular.js"></script>
+</head>
+<body data-ng-app data-ng-init="heros = [
+	{hName : 'Batman', 		hPhoto: 'images/batman.jpg', 	popular : 2},
+	{hName : 'Superman', 	hPhoto: 'images/superman.jpg', 	popular : 1},
+	{hName : 'Ironman', 	hPhoto: 'images/ironman.jpg', 	popular : 3},
+	{hName : 'Spiderman', 	hPhoto: 'images/spiderman.jpg', popular : 4}
+]">
+	<input type="text" data-ng-model="hsort"/>
+	<ul>
+		<!--li data-ng-repeat = "hero in heros | filter : hsort"-->
+		<li data-ng-repeat = "hero in heros | filter : {popular : hsort}">
+			<img src='{{hero.hPhoto}}' width='50'>
+			<label>{{hero.hName}}</label>
+		</li>
+	</ul>
+</body>
+</html>
