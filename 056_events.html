@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script>
+		$(function(){
+			/*
+			 * 
+			$(".btn").on("click", function(){
+				alert("you clicked")
+			})
+			$(".btn").on("mousedown", function(){
+				alert("mouse down")
+			})
+			$(".btn").on("mouseover", function(){
+				alert("mouse over")
+			})
+			 */
+			
+			
+			/*
+			$(".btn").on({
+				click : function(){
+					alert("you clicked")
+						},
+				mousedown: function(){
+					alert("mouse down")
+				},
+				mouseover: function(){
+					alert("mouse over")
+				}
+			})
+			 */
+			$(".box").on("click",function(){
+				$(this).clone(true).appendTo("#container")
+			})
+		})
+	</script>
+</head>
+<body>
+	<!-- <button class="btn btn-primary">Click Me</button> -->
+	<div id="container">
+		<img src="images/rajani.jpg" class="box" width="100"/>
+	</div>
+</body>
+</html>
