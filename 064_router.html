@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<style>
+		.box{
+			width: 200px;
+			height: 340px;
+			border: 1px solid gray;
+			background-color: silver;
+			margin: auto;
+		}
+		.box h1{
+			margin: 0px;
+			font-family: Arial;
+			text-align: center;
+			background-color: gray;
+			color: silver;
+		}
+		.box h3{
+			margin: 0px;
+			font-family: Arial;
+			text-align: center;
+			background-color: yellow;
+			color: gray;
+		}
+		.box h2{
+			margin: 0px;
+			font-family: Arial;
+			background-color: yellow;
+			color: gray;
+		}
+		.box img{
+			display: block;
+		}
+	</style>
+	<title>Document</title>
+	<script src="js/angular.js"></script>
+	<script src="js/angular-route.js"></script>
+	<script src="com/accenture/controller/batController.js"></script>
+	<script src="com/accenture/controller/spiderController.js"></script>
+	<script src="com/accenture/module/secondModule.js"></script>
+</head>
+<body ng-app="secondModule">
+	<div ng-view></div>
+</body>
+</html>
