@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="js/angular.js"></script>
+	<script src="com/accenture/controller/secondController.js"></script>
+</head>
+<body ng-app ng-controller="secondController as ctrl" >
+	<table>
+		<tr>
+			<th ng-click="ctrl.sortIt('hName')">Title</th>
+			<th ng-click="ctrl.sortIt('hPhoto')">Photo</th>
+			<th ng-click="ctrl.sortIt('city')">City</th>
+			<th ng-click="ctrl.sortIt('popular')">Popular</th>
+			<th ng-click="ctrl.sortIt('releaseDate')">Release Date</th>
+			<th ng-click="ctrl.sortIt('price')">Price </th>
+		</tr>
+		<tr ng-repeat="hero in ctrl.heros | orderBy : ctrl.selectedVal : ctrl.reverse">
+			<td>{{hero.hName}}</td>
+			<td><img src ='{{hero.hPhoto}}' width="40" align="absmiddle"/></td>
+			<td>{{hero.city}}</td>
+			<td>{{hero.popular}}</td>
+			<td>{{hero.releaseDate}}</td>
+			<td>{{hero.price}}</td>
+		</tr>
+	</table>
+</body>
+</html>

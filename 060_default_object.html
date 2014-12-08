@@ -9,15 +9,25 @@
 	{hName : 'Batman', 		hPhoto: 'images/batman.jpg', 	popular : 2},
 	{hName : 'Superman', 	hPhoto: 'images/superman.jpg', 	popular : 1},
 	{hName : 'Ironman', 	hPhoto: 'images/ironman.jpg', 	popular : 3},
+	{hName : 'Phantom', 	hPhoto: 'images/phantom.jpg', 	popular : 3},
+	{hName : 'Robin', 	hPhoto: 'images/robin.jpg', 	popular : 3},
+	{hName : 'Rajani', 	hPhoto: 'images/ironman.jpg', 	popular : 5},
 	{hName : 'Spiderman', 	hPhoto: 'images/spiderman.jpg', popular : 4}
 ]">
 	<input type="text" data-ng-model="hsort"/>
-	<ul>
+	<!-- <ul>
 		<!--li data-ng-repeat = "hero in heros | filter : hsort"-->
-		<li data-ng-repeat = "hero in heros | filter : {popular : hsort}">
+		<!-- li data-ng-repeat = "hero in heros | filter : {popular : hsort}">
 			<img src='{{hero.hPhoto}}' width='50'>
 			<label>{{hero.hName}}</label>
 		</li>
-	</ul>
+	</ul> -->
+	<table>
+		<tr data-ng-repeat = "vj in heros | filter : {popular : hsort}">
+			<td>{{vj.popular}}</td>
+			<td>{{vj.hName}}</td>
+			<td>{{vj.hPhoto}}</td>
+		</tr>
+	</table>
 </body>
 </html>
