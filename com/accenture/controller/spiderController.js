@@ -4,7 +4,4 @@ function spiderController($scope, $routeParams){
 	$scope.qty = $routeParams.qty;
 	$scope.city = "delhi";
 	$scope.price = "225.45";
-	$scope.helloThere = function(){
-		alert("hello guys")
-	}
 }
